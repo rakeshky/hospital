@@ -1,0 +1,17 @@
+<%= form_tag :action=>"new"  do %>
+ 
+ 
+ select doctor:<%= select_tag "doctor", options_for_select(["select Dr.","ram", "ramesh","raj", "ravi"]) %>
+<br>
+<br>
+<br>
+<br>
+  <%= submit_tag :submit %>
+  <br>
+<%end%>
+
+<br>
+<br>
+
+
+<%=button_to "Go back", :back%>

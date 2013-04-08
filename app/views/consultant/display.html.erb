@@ -1,0 +1,48 @@
+<table border="2" cellspacing="2">
+<tr><td>patient id</td>
+	<td>patient name</td>
+	<td>doctor name</td>
+
+</tr>
+
+
+<% @pat1.each do |p| %>
+<tr>
+   <td>
+   	  <%= p.id %>
+   	</td>
+   	<td>
+   		<%= p.patient %>
+   	</td>
+   	<td>
+   		<%=  Consultant.find(p.consultant_id).doctor %>
+   	</td>
+   	</tr>
+<% end %>
+
+</table>
+
+
+
+------------------------- has many--------------------
+<%=form_for :doc do |d| %>
+enter doctor id to know no. of patients:
+<%= d.text_field :doctorid%> 
+<%= d.submit :submit%>
+<%end%>
+<%= @abc %><br>
+TAble regarding doctor id
+<% if @abc=="patients available" %>
+
+<table cellspacing="2" border="2">
+	<tr> <td>patient name</td>
+	<td>doctor</td></tr>
+	<%for a in @con %>
+	  <tr>
+	  	 <td> <%= a.patient%></td>
+	  	 <td> <%= Consultant.find_by_id(a.consultant_id).doctor%></td>
+	  </tr>
+	<%end%>
+
+	<%end%>
+</table>

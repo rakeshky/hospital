@@ -1,0 +1,12 @@
+<%= form_tag  do %>
+ patient name:<%= text_field_tag :patient%>
+<br>
+
+Doctor id:<%=text_field_tag :doc ,@p1.id%><br>
+
+  <%= submit_tag :submit %><br>
+
+
+<%end%>
+  <%= link_to "back to doctor page", :action=>"new"%><br>
+  <%= link_to "click to display", :action=>"display"%>
